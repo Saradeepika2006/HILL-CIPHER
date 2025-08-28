@@ -1,5 +1,8 @@
 # HILL CIPHER
 HILL CIPHER
+## Name: MOPURI SARADEEPIKA
+## REGISTER NUMBER: 212224040201
+## Date: 28/08/2025
 EX. NO: 3 AIM:
  
 
@@ -29,7 +32,68 @@ STEP-4: Multiply the two matrices to obtain the cipher text of length three.
 STEP-5: Combine all these groups to get the complete cipher text.
 
 ## PROGRAM 
+```
+#include <stdio.h> 
+#include <string.h> 
+int main()  
+{ 
+unsigned int a[3][3] = {{6, 24, 1}, {13, 16, 10}, {20, 17, 15}}; 
+unsigned int b[3][3] = {{8, 5, 10}, {21, 8, 21}, {21, 12, 8}}; 
+int i, j, t = 0; 
+unsigned int c[3], d[3]; 
+char msg[4]; // buffer for exactly 3 characters plus null terminator 
+printf("Enter plain text (3 letters): "); 
+scanf("%3s", msg); // ensure input is limited to 3 characters 
+// Ensure the message has exactly 3 characters 
+if (strlen(msg) != 3) 
+{ 
+} 
+printf("Error: The plain text must be exactly 3 letters.\n"); return 1; 
+// Convert plain text to numerical values (A=0, B=1, ..., Z=25) for (i = 0; i < 3; i++) 
+{ 
+} 
+c[i] = msg[i] - 'A'; 
+printf("%d ", c[i]); // display numerical representation of characters 
+// Encrypt the message using matrix 'a' 
+for (i = 0; i < 3; i++) 
+{ 
+} 
+t = 0; 
+for (j = 0; j < 3; j++) 
+{  
+t+= a[i][j] * c[j]; 
+} 
+d[i] = t % 26; // mod 26 for alphabet range 
+// Output encrypted cipher text  
+printf("\nEncrypted Cipher Text: ");  
+for (i = 0; i < 3; i++) 
+{ 
+printf("%c", d[i] + 'A'); 
+} 
+// Decrypt the message using matrix 'b' 
+for (i = 0; i < 3; i++) 
+{ 
+{  
+t = 0; 
+} 
+for (j = 0; j < 3; j++)  
+t += b[i][j] * d[j];
+ c[i] = t % 26; // mod 26 for alphabet range 
+} 
+// Output decrypted cipher text 
+printf("\nDecrypted Cipher Text: ); 
+for (i = 0; i < 3; i++) 
+{ 
+} 
+printf("%c", c[i] + 'A'); 
+getchar(); // Use getchar() to wait for input  
+return 0; 
+}
+```
 
 ## OUTPUT
+<img width="619" height="139" alt="Screenshot 4" src="https://github.com/user-attachments/assets/8656f3a0-7a70-44a8-a480-e825ee445c03" />
+
 
 ## RESULT
+<img width="626" height="103" alt="Screenshot 5" src="https://github.com/user-attachments/assets/fc94c700-68c9-41f3-9d86-3d224d3d7396" />
